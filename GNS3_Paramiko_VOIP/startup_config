@@ -1,0 +1,99 @@
+Switch1:
+en
+conf t
+interface gigabitEthernet 0/1
+switchport mode access
+switchport access vlan 100
+exit
+interface vlan 100
+ip address 192.168.100.1 255.255.255.0
+no shutdown
+exit
+hostname Switch1
+ip domain-name Middlesex
+username Patryk secret cisco
+enable secret cisco
+username Patryk privilege 15
+line vty 0 4
+transport input ssh
+login local
+exit
+crypto key generate rsa
+1024
+exit
+
+Router1:
+conf t
+interface gigabitEthernet 0/0
+no shutdown                                   
+interface gigabitEthernet 0/0.100
+encapsulation dot1q 100
+ip address 192.168.100.2 255.255.255.0
+no shutdown                          
+interface gigabitEthernet 0/0.5
+encapsulation dot1q 5
+ip address 192.168.5.1 255.255.255.0
+no shutdown         
+exit
+hostname Router1
+ip domain-name Middlesex
+username Patryk secret cisco
+enable secret cisco
+username Patryk privilege 15
+line vty 0 4
+transport input ssh
+login local
+exit
+crypto key generate rsa
+1024
+exit
+
+Switch2:
+en
+conf t
+interface gigabitEthernet 0/1
+switchport mode access
+switchport access vlan 100
+exit
+interface vlan 100
+ip address 192.168.100.1 255.255.255.0
+no shutdown
+exit
+hostname Switch2
+ip domain-name Middlesex
+username Dominika secret cisco
+enable secret cisco
+username Dominika privilege 15
+line vty 0 4
+transport input ssh
+login local
+exit
+crypto key generate rsa
+1024
+exit
+
+Router2:
+conf t
+interface gigabitEthernet 0/0
+no shutdown                                   
+interface gigabitEthernet 0/0.100
+encapsulation dot1q 100
+ip address 192.168.100.2 255.255.255.0
+no shutdown                          
+interface gigabitEthernet 0/0.6
+encapsulation dot1q 6
+ip address 192.168.6.1 255.255.255.0
+no shutdown         
+exit
+hostname Router2
+ip domain-name Middlesex
+username Dominika secret cisco
+enable secret cisco
+username Dominika privilege 15
+line vty 0 4
+transport input ssh
+login local
+exit
+crypto key generate rsa
+1024
+exit
