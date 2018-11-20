@@ -3,4 +3,5 @@ Software Defined Networking concept. The whole topology which includes Voice ove
 Internet Protocol and security features will be programmed in under one minute in
 GNS3 emulator using the Python script which will be launched from the Ubuntu
 docker container. Below is the topology from GNS3:
-https://github.com/Patryk803/Network-Programmability/blob/master/GNS3_Paramiko_VOIP/topology.PNG?raw=true
+![Topology](https://github.com/Patryk803/Network-Programmability/blob/master/GNS3_Paramiko_VOIP/topology.PNG?raw=true)
+
